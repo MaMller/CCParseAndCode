@@ -11,8 +11,6 @@ public class ImgPathes {
 		
 	}
 	
-	
-
 	public String[] codeStringToPathArray(String code)  {
 		String[] pathArray = new String[code.length()];
 		int[] intArray = new int[code.length()];
@@ -28,12 +26,7 @@ public class ImgPathes {
 		
 	}
 	
-	public String getTheCode()  {
-		Region region = new Region(500,245,100,150);
-		String text = region.text();
-		System.out.println("Anfang:"+text.trim()+"Ende");
-		return text.trim();
-		}
+	
 	
 	public String getSendButtonPath() {
 		return sendButtonPath;
