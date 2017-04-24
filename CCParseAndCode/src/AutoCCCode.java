@@ -37,12 +37,12 @@ public class AutoCCCode {
 		String text = region.text();
 		String lines[] = text.split("\\r?\\n");
 		for (int i = 0; i < lines.length; i++) {
-			if (lines[i].length() == 4) {
+			if (lines[i].trim().length() == 4) {
 				try {
 					Integer.parseInt(lines[i]);
 					text = lines[i];
 				} catch (NumberFormatException e) {
-					System.out.println("Kein Code");
+					System.out.println(lines[i] + " ist kein Code");
 				}
 			}
 		}
