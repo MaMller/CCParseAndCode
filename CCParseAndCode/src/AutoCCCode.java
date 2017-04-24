@@ -4,9 +4,9 @@ import org.sikuli.script.Region;
 import org.sikuli.script.Screen;
 
 public class AutoCCCode {
+	private Region region;
 
 	public AutoCCCode() {
-
 	}
 
 	public void startAutoCCCode(int[] regionInt) {
@@ -14,7 +14,7 @@ public class AutoCCCode {
 		int y = regionInt[1];
 		int width = regionInt[2] - regionInt[0];
 		int height = regionInt[3] - regionInt[1];
-		Region region = new Region(x, y, width, height);
+		this.region = new Region(x, y, width, height);
 		Settings.OcrTextSearch = true;
 		Settings.OcrTextRead = true;
 		EnterCode enterCode = new EnterCode();
@@ -28,7 +28,7 @@ public class AutoCCCode {
 		 * e1.printStackTrace(); }
 		 */
 		String code = getTheCode(region);
-		enterCode.enterTheCode(code);
+		enterCode.enterTheCode(code,this.region);
 	}
 
 	public String getTheCode(Region region) {
@@ -39,8 +39,9 @@ public class AutoCCCode {
 		for (int i = 0; i < lines.length; i++) {
 			if (lines[i].trim().length() == 4) {
 				try {
-					Integer.parseInt(lines[i]);
+					Integer.parseInt(lines[i].trim());
 					text = lines[i];
+					break;
 				} catch (NumberFormatException e) {
 					System.out.println(lines[i] + " ist kein Code");
 				}

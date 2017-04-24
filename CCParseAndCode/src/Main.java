@@ -2,6 +2,7 @@ public class Main {
 	private static String currentWindowsUser = System.getProperty("user.name"); 
 	private static String date = "2017-04-22";
 	private static FindWindowRect windowFinder;
+	private boolean debug = true;
 	/*
 	 * args[0] -> Username
 	 * 
