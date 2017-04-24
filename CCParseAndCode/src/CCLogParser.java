@@ -53,9 +53,7 @@ public class CCLogParser {
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 			String line;
 			List<Long> temp = null;
-			// SimpleDateFormat dateFormatToday = new
-			// SimpleDateFormat("yyyy-MM-dd");
-			// String dateStr = dateFormatToday.format(new Date());
+			
 			while ((line = br.readLine()) != null) {
 
 				if (line.contains(dateStr)) {

@@ -1,9 +1,9 @@
 import org.sikuli.script.Region;
 
-public class Util {
+public class ImgPathes {
 	private String sendButtonPath = "img/send.png";
 	private String[] imgPathes = new String[10];
-	public Util()  {
+	public ImgPathes()  {
 		for (int i = 0; i <= 9;i++)  {
 			String imgPath = "img/" + i + ".png";
 			this.imgPathes[i] = imgPath;

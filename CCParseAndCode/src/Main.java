@@ -22,7 +22,14 @@ public class Main {
 		System.out.println("Aktueller Windows User: " + currentWindowsUser) ;
 		
 		CCLogParser ccLogParser = new CCLogParser();
-	
+		InputOutput io = new InputOutput();
+		
+		if (io.inputYes(io.inputWithMsg(io.getStartAutoCCCode(), 1)))  {
+			AutoCCCode accc = new AutoCCCode();
+			accc.startAutoCCCode();
+		}  else  {
+			System.out.println("... Programm beendet");
+		}
 	}
 }
 // bla
