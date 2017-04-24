@@ -13,6 +13,7 @@ public class EnterCode {
 				screen.click(pathArray[i]);
 				}
 				screen.click(imgPathes.getSendButtonPath());
+
 			} catch (FindFailed e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
