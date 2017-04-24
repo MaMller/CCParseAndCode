@@ -6,13 +6,16 @@ import com.sun.jna.*;
 import com.sun.jna.platform.win32.WinDef.HWND;
 import com.sun.jna.win32.*;
 
-public class findWindowRect extends Thread {
+
+
+
+public class FindWindowRect extends Thread {
 
 	private static int[] region;
 	private static final String windowTitle = "Anwesenheitskontrolle";
 	private static boolean running = true;
 
-	public findWindowRect() {
+	public FindWindowRect() {
 	}
 
 	public interface User32 extends StdCallLibrary {
@@ -46,6 +49,8 @@ public class findWindowRect extends Thread {
 			}else{
 				// Debug ausgabe, austauschen mit enterTheCode();
 				System.out.print(Arrays.toString(region));
+				AutoCCCode accc = new AutoCCCode();
+				accc.startAutoCCCode();
 				return;
 			}
 			
@@ -56,4 +61,6 @@ public class findWindowRect extends Thread {
 			}
 		}
 	}
+	
+	
 }

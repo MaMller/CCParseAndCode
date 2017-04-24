@@ -1,20 +1,21 @@
 import org.sikuli.basics.Settings;
 import org.sikuli.script.FindFailed;
+import org.sikuli.script.Region;
 import org.sikuli.script.Screen;
 
-import codefinder.findWindowRect;
+import codefinder.FindWindowRect;
 
 public class AutoCCCode {
 	
 	
-	private findWindowRect windowFinder;
+	
 	
 	public AutoCCCode()  {
-		this.windowFinder = new findWindowRect();
+		
 	}
 	
-	public void startAutoCCCode() {
-		windowFinder.start();
+	public void startAutoCCCode(Region region) {
+		
 		Settings.OcrTextSearch = true;
 		Settings.OcrTextRead = true;
 		EnterCode enterCode = new EnterCode();
@@ -34,8 +35,14 @@ public class AutoCCCode {
 			e1.printStackTrace();
 		}
 		*/
-		ImgPathes imgPathes = new ImgPathes();
-		String code = imgPathes.getTheCode();
+		getTheCode(region);
 		enterCode.enterTheCode("9574");
+	}
+	
+	public String getTheCode(Region region)  {
+		// Region region = new Region(500,245,100,150);
+		String text = region.text();
+		System.out.println("Anfang:"+text.trim()+"Ende");
+		return text.trim();
 	}
 }
