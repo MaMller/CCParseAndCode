@@ -2,13 +2,19 @@ import org.sikuli.basics.Settings;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.Screen;
 
+import codefinder.findWindowRect;
+
 public class AutoCCCode {
 	
+	
+	private findWindowRect windowFinder;
+	
 	public AutoCCCode()  {
-		
+		this.windowFinder = new findWindowRect();
 	}
-
+	
 	public void startAutoCCCode() {
+		windowFinder.start();
 		Settings.OcrTextSearch = true;
 		Settings.OcrTextRead = true;
 		EnterCode enterCode = new EnterCode();
