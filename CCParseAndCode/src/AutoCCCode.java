@@ -6,7 +6,6 @@ import org.sikuli.script.Screen;
 public class AutoCCCode {
 
 	public AutoCCCode() {
-
 	}
 
 	public void startAutoCCCode(int[] regionInt) {
@@ -39,8 +38,9 @@ public class AutoCCCode {
 		for (int i = 0; i < lines.length; i++) {
 			if (lines[i].trim().length() == 4) {
 				try {
-					Integer.parseInt(lines[i]);
+					Integer.parseInt(lines[i].trim());
 					text = lines[i];
+					break;
 				} catch (NumberFormatException e) {
 					System.out.println(lines[i] + " ist kein Code");
 				}
