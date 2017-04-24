@@ -3,8 +3,6 @@ import org.sikuli.script.FindFailed;
 import org.sikuli.script.Region;
 import org.sikuli.script.Screen;
 
-import codefinder.FindWindowRect;
-
 public class AutoCCCode {
 	
 	
@@ -14,8 +12,12 @@ public class AutoCCCode {
 		
 	}
 	
-	public void startAutoCCCode(Region region) {
-		
+	public void startAutoCCCode(int[] regionInt) {
+		int x = regionInt[0];
+        int y = regionInt[1];
+        int width = regionInt[2] - regionInt[0];
+        int height = regionInt[3] - regionInt[1];  
+        Region region = new Region(x,y,width,height);
 		Settings.OcrTextSearch = true;
 		Settings.OcrTextRead = true;
 		EnterCode enterCode = new EnterCode();
@@ -35,8 +37,8 @@ public class AutoCCCode {
 			e1.printStackTrace();
 		}
 		*/
-		getTheCode(region);
-		enterCode.enterTheCode("9574");
+		String code = getTheCode(region);
+		enterCode.enterTheCode(code);
 	}
 	
 	public String getTheCode(Region region)  {
