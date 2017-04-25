@@ -1,4 +1,6 @@
-public class Main {
+import java.applet.Applet;
+
+public class Main extends Applet {
 	private static String currentWindowsUser = System.getProperty("user.name"); 
 	private static String date = "2017-04-22";
 	private static FindWindowRect windowFinder;
@@ -9,6 +11,10 @@ public class Main {
 	 */
 	
 	public static void main(String[] args)  {
+		MainCanvas m = new MainCanvas();
+		// m.setText("neuer Text");
+		// m.repaint();
+		
 		System.out.println("Aktueller Windows User: " + currentWindowsUser) ;
 		windowFinder = new FindWindowRect();
 		// CC Log Parser starten
