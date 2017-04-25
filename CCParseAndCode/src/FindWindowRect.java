@@ -1,6 +1,7 @@
 
 
 import java.util.Arrays;
+import java.util.Date;
 
 import org.sikuli.script.Region;
 
@@ -8,17 +9,16 @@ import com.sun.jna.*;
 import com.sun.jna.platform.win32.WinDef.HWND;
 import com.sun.jna.win32.*;
 
-
-
-
-
 public class FindWindowRect extends Thread {
 
 	private static int[] regionInt;
 	private static final String windowTitle = "Anwesenheitskontrolle";
 	private static boolean running = true;
+	private GUI gui;
 
 	public FindWindowRect() {
+		this.gui = Main.getGui();
+		gui.setText("Neuer Text aus\n Find Window Rect");
 	}
 
 	public interface User32 extends StdCallLibrary {
@@ -48,10 +48,13 @@ public class FindWindowRect extends Thread {
 		while (running) {
 			regionInt = getRect(windowTitle);
 			if (regionInt == null) {
+				
 				System.out.print("Fenster :\"" + windowTitle + "\" nicht aktiv\n");
+				gui.setAnwesenheitsKontrolleActive("Fenster :\"" + windowTitle + "\" nicht aktiv\n");
 			}else{
 				// Debug ausgabe, austauschen mit enterTheCode();
 				System.out.print(Arrays.toString(regionInt));
+				gui.setAnwesenheitsKontrolleActive(Arrays.toString(regionInt));
 				
 				AutoCCCode accc = new AutoCCCode();
 				accc.startAutoCCCode(regionInt);

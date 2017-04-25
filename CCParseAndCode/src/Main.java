@@ -1,17 +1,25 @@
 import java.applet.Applet;
 
-public class Main extends Applet {
+public class Main  {
 	private static String currentWindowsUser = System.getProperty("user.name"); 
 	private static String date = "2017-04-22";
 	private static FindWindowRect windowFinder;
-	private boolean debug = true;
+	private static boolean debug = true;
+	private static GUI gui = new GUI();
 	/*
 	 * args[0] -> Username
 	 * 
 	 */
 	
+	public static final GUI getGui()  {
+		return gui;
+	}
+	
 	public static void main(String[] args)  {
-		MainCanvas m = new MainCanvas();
+		Main m = new Main();
+		
+		
+		
 		// m.setText("neuer Text");
 		// m.repaint();
 		
@@ -21,7 +29,7 @@ public class Main extends Applet {
 		CCLogParser ccLogParser = new CCLogParser();
 		InputOutput io = new InputOutput();
 		
-		if (io.inputYes(io.inputWithMsg(io.getStartAutoCCCode(), 1)))  {
+		if (debug || io.inputYes(io.inputWithMsg(io.getStartAutoCCCode(), 1)))  {
 			windowFinder.start();
 			
 		}  else  {
