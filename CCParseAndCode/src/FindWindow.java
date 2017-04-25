@@ -1,25 +1,24 @@
-
-
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 
-import org.sikuli.script.Region;
-
-import com.sun.jna.*;
+import com.sun.jna.Native;
 import com.sun.jna.platform.win32.WinDef.HWND;
-import com.sun.jna.win32.*;
+import com.sun.jna.win32.StdCallLibrary;
+import com.sun.jna.win32.W32APIOptions;
 
-public class FindWindowRect extends Thread {
 
+
+public class FindWindow extends Thread {
+	
 	private static int[] regionInt;
-	private static final String windowTitle = "Anwesenheitskontrolle";
+	private static final String windowTitle = "CC Launcher 2.5";
 	private static boolean running = true;
 	private GUI gui;
 	private Date date;
 	private SimpleDateFormat sdf;
 
-	public FindWindowRect() {
+	public FindWindow() {
 		this.gui = Main.getGui();
 		gui.setText("Neuer Text aus\n Find Window Rect");
 		sdf = new SimpleDateFormat("HH:MM:ss");
@@ -57,15 +56,14 @@ public class FindWindowRect extends Thread {
 			if (regionInt == null) {
 				
 				System.out.print(sdf.format(date.getTime()) + " Fenster :\"" + windowTitle + "\" nicht aktiv\n");
-				gui.setAnwesenheitsKontrolleActive(sdf.format(date.getTime()) + " Fenster :\"" + windowTitle + "\" nicht aktiv\n");
+				gui.setLauncherActive(sdf.format(date.getTime()) + " Fenster :\"" + windowTitle + "\" nicht aktiv\n");
 			}else{
 				// Debug ausgabe, austauschen mit enterTheCode();
 				System.out.print(sdf.format(date.getTime()) + " " + Arrays.toString(regionInt));
-				gui.setAnwesenheitsKontrolleActive(sdf.format(date.getTime()) + " " + Arrays.toString(regionInt));
+				gui.setAnwesenheitsKontrolleActive(sdf.format(date.getTime()) + " Launcher Aktiv an rect: " + Arrays.toString(regionInt));
 				
-				AutoCCCode accc = new AutoCCCode();
-				accc.startAutoCCCode(regionInt);
-				return;
+				
+				
 			}
 			
 			try {
@@ -75,6 +73,5 @@ public class FindWindowRect extends Thread {
 			}
 		}
 	}
-	
-	
+
 }
