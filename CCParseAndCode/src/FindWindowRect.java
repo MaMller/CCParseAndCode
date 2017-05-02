@@ -22,7 +22,7 @@ public class FindWindowRect extends Thread {
 	public FindWindowRect() {
 		this.gui = Main.getGui();
 		gui.setText("Neuer Text aus\n Find Window Rect");
-		sdf = new SimpleDateFormat("HH:MM:ss");
+		sdf = new SimpleDateFormat("HH:mm:ss");
 	}
 
 	public interface User32 extends StdCallLibrary {
