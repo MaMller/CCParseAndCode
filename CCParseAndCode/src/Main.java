@@ -7,7 +7,9 @@ public class Main {
 	 * args[0] -> Username
 	 * 
 	 */
-	
+	public FindWindowRect getWindowFinder(){
+		return windowFinder;
+	}
 	public static void main(String[] args)  {
 		System.out.println("Aktueller Windows User: " + currentWindowsUser) ;
 		windowFinder = new FindWindowRect();

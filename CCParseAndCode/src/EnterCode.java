@@ -4,7 +4,7 @@ import org.sikuli.script.Screen;
 
 public class EnterCode {
 	
-	public void enterTheCode(String code, Region region)  {
+	public boolean enterTheCode(String code, Region region)  {
 		ImgPathes imgPathes = new ImgPathes();
 		String[] pathArray = imgPathes.codeStringToPathArray(code);
 		
@@ -13,9 +13,14 @@ public class EnterCode {
 				region.click(pathArray[i]);
 				}
 				region.click(imgPathes.getSendButtonPath());
+				return true;
 			} catch (FindFailed e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				//e.printStackTrace();
+				System.out.println("Code nicht erkannt, starte neu!");
+				FindWindowRect windowFinder = new FindWindowRect();
+				windowFinder.start();
+				return false;
 			}
 		}
 	}

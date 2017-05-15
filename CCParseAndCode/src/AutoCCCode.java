@@ -9,7 +9,7 @@ public class AutoCCCode {
 	public AutoCCCode() {
 	}
 
-	public void startAutoCCCode(int[] regionInt) {
+	public boolean startAutoCCCode(int[] regionInt) {
 		int x = regionInt[0];
 		int y = regionInt[1];
 		int width = regionInt[2] - regionInt[0];
@@ -28,7 +28,7 @@ public class AutoCCCode {
 		 * e1.printStackTrace(); }
 		 */
 		String code = getTheCode(region);
-		enterCode.enterTheCode(code,this.region);
+		return enterCode.enterTheCode(code,this.region);
 	}
 
 	public String getTheCode(Region region) {
@@ -47,7 +47,7 @@ public class AutoCCCode {
 				}
 			}
 		}
-		System.out.println("Anfang:" + text.trim() + "Ende");
+		System.out.println("Kontroll Code:" + text.trim() );//+ "Ende");
 		return text.trim();
 	}
 }
