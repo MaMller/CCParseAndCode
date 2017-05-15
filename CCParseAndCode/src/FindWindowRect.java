@@ -48,14 +48,15 @@ public class FindWindowRect extends Thread {
 		while (running) {
 			regionInt = getRect(windowTitle);
 			if (regionInt == null) {
-				System.out.print("Fenster :\"" + windowTitle + "\" nicht aktiv\n");
+				//System.out.print("Fenster :\"" + windowTitle + "\" nicht aktiv\n");
 			}else{
 				// Debug ausgabe, austauschen mit enterTheCode();
-				System.out.print(Arrays.toString(regionInt));
+				//System.out.print(Arrays.toString(regionInt));
 				
 				AutoCCCode accc = new AutoCCCode();
-				accc.startAutoCCCode(regionInt);
-				return;
+				//System.out.println("Kontrolle: ")
+				running = accc.startAutoCCCode(regionInt);
+				//return;
 			}
 			
 			try {
