@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import gui.GuiElements;
 import logging.MyLogger;
 
 public class CCLogParser {
@@ -131,6 +132,8 @@ public class CCLogParser {
 			}
 			iter = 0;
 		}
+		GuiElements.addToLogOutput(datestr + ":\r\n" + millisToHumanTime(t) + " Stunden geloggt = "
+				+ (float) (((t / 1000) / 60) / 45.0) + " UE's");
 		System.out.println(datestr + ":\r\n" + millisToHumanTime(t) + " Stunden geloggt = "
 				+ (float) (((t / 1000) / 60) / 45.0) + " UE's");
 

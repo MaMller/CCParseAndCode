@@ -8,6 +8,9 @@ import com.sun.jna.*;
 import com.sun.jna.platform.win32.WinDef.HWND;
 import com.sun.jna.win32.*;
 
+import gui.GuiElements;
+import logging.MyLogger;
+
 
 
 
@@ -46,6 +49,7 @@ public class FindWindowRect extends Thread {
 
 	public void run() {
 		while (running) {
+			GuiElements.setTimeNow(MyLogger.timeNow());
 			regionInt = getRect(windowTitle);
 			if (regionInt == null) {
 				//System.out.print("Fenster :\"" + windowTitle + "\" nicht aktiv\n");

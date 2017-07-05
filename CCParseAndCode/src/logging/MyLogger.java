@@ -63,10 +63,10 @@ public abstract class MyLogger {
 		
 	}
 	
-	private static String timeNow()  {
+	public static String timeNow()  {
 		Date date = new Date(); 
 		String humanTime = null;
-		SimpleDateFormat formatter = new SimpleDateFormat("YYYY-MM-dd HH:mm");
+		SimpleDateFormat formatter = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 		humanTime = formatter.format(date);
 		// humanTime = String.valueOf((time / 1000) / 60);
 		return humanTime;

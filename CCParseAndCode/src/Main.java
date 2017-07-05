@@ -1,3 +1,4 @@
+import gui.GuiElements;
 import gui.MainFrame;
 import logging.MyLogger;
 
@@ -16,6 +17,8 @@ public class Main {
 	
 	public static void main(String[] args)  {
 		MainFrame mf = new MainFrame();
+		
+		GuiElements.setStatus("Status Test");
 		MyLogger.logIt(1, "Test");
 		System.out.println("Aktueller Windows User: " + currentWindowsUser) ;
 		windowFinder = new FindWindowRect();
