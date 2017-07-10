@@ -1,19 +1,12 @@
 
 
 import java.util.Arrays;
-
 import org.sikuli.script.Region;
-
 import com.sun.jna.*;
 import com.sun.jna.platform.win32.WinDef.HWND;
 import com.sun.jna.win32.*;
-
 import gui.GuiElements;
 import logging.MyLogger;
-
-
-
-
 
 public class FindWindowRect extends Thread {
 
@@ -44,6 +37,8 @@ public class FindWindowRect extends Thread {
 				regionInt = null;
 			}
 		}
+		String regionIntString = String.valueOf(regionInt);
+		
 		return regionInt;
 	}
 
@@ -52,8 +47,10 @@ public class FindWindowRect extends Thread {
 			GuiElements.setTimeNow(MyLogger.timeNow());
 			regionInt = getRect(windowTitle);
 			if (regionInt == null) {
-				//System.out.print("Fenster :\"" + windowTitle + "\" nicht aktiv\n");
+				GuiElements.setWindowStatus("Fenster :\"" + windowTitle + "\" nicht aktiv\n");
 			}else{
+				GuiElements.setWindowStatus("Fenster :\"" + windowTitle + "\" aktiv\n");
+				MyLogger.logIt(1, "Fenster :\"" + windowTitle + "\" aktiv\n");
 				// Debug ausgabe, austauschen mit enterTheCode();
 				//System.out.print(Arrays.toString(regionInt));
 				
@@ -62,7 +59,7 @@ public class FindWindowRect extends Thread {
 				running = accc.startAutoCCCode(regionInt);
 				//return;
 			}
-			
+	
 			try {
 				Thread.sleep(4000);
 			} catch (InterruptedException e) {
@@ -70,6 +67,4 @@ public class FindWindowRect extends Thread {
 			}
 		}
 	}
-	
-	
 }

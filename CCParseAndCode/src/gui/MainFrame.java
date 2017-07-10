@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 
 import locker.AppLock;
 import locker.CrossLock;
+import logging.MyLogger;
 
 public class MainFrame extends JFrame {
 
@@ -28,6 +29,7 @@ public class MainFrame extends JFrame {
 		frame.addWindowListener(new WindowAdapter() {
 			// Fensterstatus -> WIRD geschlossen
 			public void windowClosing(WindowEvent ev) {
+				// MyLogger.logIt(1, "CCParseAndcode Fenster geschlossen");
 				frame.dispose();
 			}
 

@@ -15,12 +15,13 @@ public class EnterCode {
 				region.click(pathArray[i]);
 			}
 			int x = region.click(imgPathes.getSendButtonPath());
-			MyLogger.logIt(1, "click: " + String.valueOf(x));
+			MyLogger.logIt(1, "click: imgPath:" + imgPathes.getSendButtonPath() + String.valueOf(x));
 			return true;
 		} catch (FindFailed e) {
 			// TODO Auto-generated catch block
 			// e.printStackTrace();
 			System.out.println("Code nicht erkannt, starte neu!");
+			MyLogger.logIt(1, "Code nicht erkannt, starte neu!");
 			FindWindowRect windowFinder = new FindWindowRect();
 			windowFinder.start();
 			return false;

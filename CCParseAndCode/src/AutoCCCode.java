@@ -1,13 +1,19 @@
 import org.sikuli.basics.Settings;
 import org.sikuli.script.Region;
 
+import gui.GuiElements;
+import logging.MyLogger;
+
 public class AutoCCCode {
 	private Region region;
+	private int tryCount = 5;
 
 	public AutoCCCode() {
 	}
 
 	public boolean startAutoCCCode(int[] regionInt) {
+		String code = "-1";
+		int count = 0;
 		int x = regionInt[0];
 		int y = regionInt[1];
 		int width = regionInt[2] - regionInt[0];
@@ -16,9 +22,13 @@ public class AutoCCCode {
 		Settings.OcrTextSearch = true;
 		Settings.OcrTextRead = true;
 		EnterCode enterCode = new EnterCode();
+		for (count = 0;count <= tryCount;count++)  {
+		  code = getTheCode(region);
+		  if (code != "-1")
+			  return enterCode.enterTheCode(code, this.region);
+		  }
+		return false;
 		
-		String code = getTheCode(region);
-		return enterCode.enterTheCode(code,this.region);
 	}
 
 	public String getTheCode(Region region) {
@@ -30,14 +40,20 @@ public class AutoCCCode {
 			if (lines[i].trim().length() == 4) {
 				try {
 					Integer.parseInt(lines[i].trim());
-					text = lines[i];
-					break;
+					if (lines[i].trim().length() == 4) {
+						text = lines[i];
+						GuiElements.setLastCode("Kontroll Code:" + text.trim());
+						System.out.println("Kontroll Code:" + text.trim());// + "Ende");
+						MyLogger.logIt(1, "Kontroll Code:" + text.trim());
+						return text.trim();
+					}
 				} catch (NumberFormatException e) {
+					GuiElements.setLastCode(lines[i] + " ist kein Code");
 					System.out.println(lines[i] + " ist kein Code");
 				}
 			}
 		}
-		System.out.println("Kontroll Code:" + text.trim() );//+ "Ende");
-		return text.trim();
+		return "-1";
+		
 	}
 }

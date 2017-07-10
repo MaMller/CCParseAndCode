@@ -1,18 +1,44 @@
-----
-2017-07-05 09:04 -> Test
-2017-07-05 09:06 -> [1] Test
-2017-07-05 10:58 -> [1] Test
-2017-07-05 11:00 -> [1] Test
-2017-07-05 11:03 -> [1] Test
-2017-07-05 11:05 -> [1] Test
-2017-07-05 11:06 -> [1] Test
-2017-07-05 11:12 -> [1] Test
-2017-07-05 11:14 -> [1] Test
-2017-07-05 11:15 -> [1] Test
-2017-07-05 11:15 -> [1] Test
-2017-07-05 11:15 -> [1] Test
-2017-07-05 11:19 -> [1] Test
-2017-07-05 11:19 -> [1] Test
-2017-07-05 11:27 -> [1] Test
-2017-07-05 11:28:10 -> [1] Test
-2017-07-05 11:29:16 -> [1] Test
+2017-07-06 10:54:02 -> [1] CCParseAndCode gestartet
+2017-07-06 10:54:09 -> [1] CCParseAndCode gestartet
+2017-07-06 10:59:35 -> [1] CCParseAndCode gestartet
+2017-07-06 10:59:57 -> [1] CCParseAndCode gestartet
+2017-07-06 11:00:37 -> [1] CCParseAndCode gestartet
+2017-07-06 11:00:37 -> [1] regionInt: null
+2017-07-06 11:00:41 -> [1] regionInt: null
+2017-07-06 11:00:45 -> [1] regionInt: null
+2017-07-06 12:16:11 -> [1] CCParseAndCode gestartet
+2017-07-06 13:00:20 -> [1] Fenster :"Anwesenheitskontrolle" aktiv
+
+2017-07-06 13:00:24 -> [1] Kontroll Code:4670
+2017-07-06 13:00:27 -> [1] click: imgPath:img/send.png1
+2017-07-06 14:58:53 -> [1] Fenster :"Anwesenheitskontrolle" aktiv
+
+2017-07-06 14:58:54 -> [1] Kontroll Code:‘éJ
+ ._I \I'. 
+ ‘ ~ 
+ km ._—j 
+ I Anwesenheitskontmlle I g _g—— 
+ Bitte geben Sie die unten angezeigte Zahl, 
+ durch Anklicken der eingeblendeten Tasten. ein 
+ Die Eingabe kann nur Uber die Maus erfolgen 
+ Vlifffil 
+ E E! E! 
+ E E! E! 
+ E E! E! 
+ E! El 
+ Hinweis 
+ Sofern die Anwesenheitspr?fung wéhrend Ihrer Pause erscheint, 
+ erhalten Sie selbstversténdlich keine automatische Fehlzeit.
+2017-07-07 07:41:00 -> [1] CCParseAndCode gestartet
+2017-07-07 12:12:39 -> [1] CCParseAndCode gestartet
+2017-07-07 13:00:03 -> [1] Fenster :"Anwesenheitskontrolle" aktiv
+
+2017-07-07 13:00:06 -> [1] Kontroll Code:3703
+2017-07-07 13:00:09 -> [1] click: imgPath:img/send.png1
+2017-07-07 15:00:34 -> [1] Fenster :"Anwesenheitskontrolle" aktiv
+
+2017-07-07 15:00:34 -> [1] Kontroll Code:4269
+2017-07-07 15:00:37 -> [1] click: imgPath:img/send.png1
+2017-07-10 11:10:11 -> [1] CCParseAndCode gestartet
+2017-07-10 11:54:24 -> [1] CCParseAndCode gestartet
+2017-07-10 11:55:29 -> [1] CCParseAndCode gestartet
