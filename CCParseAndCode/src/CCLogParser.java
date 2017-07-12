@@ -11,6 +11,9 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import gui.GuiElements;
+import logging.MyLogger;
+
 public class CCLogParser {
 	private List<List<Long>> times = new ArrayList<List<Long>>();
 	private String filename;
@@ -96,10 +99,12 @@ public class CCLogParser {
 			br.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
+			MyLogger.logIt(1, e.toString());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
+			MyLogger.logIt(1, e.toString());
 		}
 		calcTime(dateStr, times);
 	}
@@ -127,6 +132,8 @@ public class CCLogParser {
 			}
 			iter = 0;
 		}
+		GuiElements.addToLogOutput(datestr + ":\r\n" + millisToHumanTime(t) + " Stunden geloggt = "
+				+ (float) (((t / 1000) / 60) / 45.0) + " UE's");
 		System.out.println(datestr + ":\r\n" + millisToHumanTime(t) + " Stunden geloggt = "
 				+ (float) (((t / 1000) / 60) / 45.0) + " UE's");
 
